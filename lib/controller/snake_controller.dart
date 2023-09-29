@@ -133,7 +133,7 @@ class SnakeController extends ChangeNotifier {
 
   resetGame() {
     snakeModel.snake = [
-      Coordinate(24, 24),
+      Coordinate(10, 10),
     ];
     snakeModel.food = [];
     snakeModel.digestedFood = [];
@@ -147,7 +147,7 @@ class SnakeController extends ChangeNotifier {
 
   generateFood() {
     Random random = Random();
-    Coordinate newFood = Coordinate(random.nextInt(50), random.nextInt(50));
+    Coordinate newFood = Coordinate(random.nextInt(20), random.nextInt(20));
     for (int i = 0; i < snakeModel.snake.length; i++) {
       if (snakeModel.snake[i].x == newFood.x &&
           snakeModel.snake[i].y == newFood.y) {

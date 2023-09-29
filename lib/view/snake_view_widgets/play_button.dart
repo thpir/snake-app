@@ -15,7 +15,14 @@ class PlayButton extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         mainAxisSize: MainAxisSize.min,
         children: [
-          Image.asset('assets/images/snake_title.png', width: 200,),
+          Padding(
+            padding: EdgeInsets.all(8),
+            child: Image.asset(
+              'assets/images/snake_title.png',
+              width: MediaQuery.of(context).orientation == Orientation.portrait ? double.infinity : null,
+              height: MediaQuery.of(context).orientation == Orientation.landscape ? MediaQuery.of(context).size.height / 4 : null,
+            ),
+          ),
           Container(
             decoration: BoxDecoration(border: Border.all(width: 1, color: Colors.deepPurple)),
             child: TextButton(
@@ -26,7 +33,14 @@ class PlayButton extends StatelessWidget {
                 },
                 child: const Text('START NEW GAME')),
           ),
-          Image.asset('assets/images/snake_icon.png', width: 200,)
+          Padding(
+            padding: EdgeInsets.all(8),
+            child: Image.asset(
+              'assets/images/snake_icon.png',
+              width: MediaQuery.of(context).orientation == Orientation.portrait ? double.infinity : null,
+              height: MediaQuery.of(context).orientation == Orientation.landscape ? MediaQuery.of(context).size.height / 6 : null,
+            ),
+          ),
         ],
       ),
     );

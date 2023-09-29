@@ -25,14 +25,14 @@ class SnakeModel {
   Enum _forbiddenDirection = SnakeDirection.down;
   List<Coordinate> playField = [];
   List<Coordinate> snake = [
-    Coordinate(24, 24),
+    Coordinate(10, 10),
   ];
   List<Coordinate> food = [];
   List<Coordinate> digestedFood = [];
 
   SnakeModel() {
-    for (int y = 0; y < 50; y++) {
-      for (int x = 0; x < 50; x++) {
+    for (int y = 0; y < 20; y++) {
+      for (int x = 0; x < 20; x++) {
         playField.add(Coordinate(x, y));
       }
     }

@@ -23,7 +23,7 @@ class _GameFieldState extends State<GameField> {
         width: snakeController.setPlayFieldSize(),
         child: GridView.builder(
             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 50,
+              crossAxisCount: 20,
             ),
             itemCount: snakeController.snakeModel.playField.length,
             itemBuilder: (context, index) {
