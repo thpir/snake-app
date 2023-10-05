@@ -17,13 +17,15 @@ class _GameFieldState extends State<GameField> {
     return Container(
       decoration: BoxDecoration(
           border: Border.all(
-              width: 1, style: BorderStyle.solid, color: Colors.deepPurple)),
+              width: 1, style: BorderStyle.solid, color: Color.fromARGB(255, 136, 255, 0))),
       child: SizedBox(
         height: snakeController.setPlayFieldSize(),
         width: snakeController.setPlayFieldSize(),
         child: GridView.builder(
             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 20,
+              mainAxisSpacing: 2,
+              crossAxisSpacing: 2
             ),
             itemCount: snakeController.snakeModel.playField.length,
             itemBuilder: (context, index) {
@@ -50,8 +52,8 @@ class _GameFieldState extends State<GameField> {
               }
               return Container(
                 color: snakeOnGrid 
-                  ? Colors.deepPurple 
-                  : foodOnGrid ? Colors.red : Colors.deepPurple[50],
+                  ? Color.fromARGB(255, 136, 255, 0)
+                  : foodOnGrid ? Colors.red : Color.fromARGB(255, 0, 0, 0),
               );
             }),
       ),

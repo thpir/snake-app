@@ -24,14 +24,18 @@ class PlayButton extends StatelessWidget {
             ),
           ),
           Container(
-            decoration: BoxDecoration(border: Border.all(width: 1, color: Colors.deepPurple)),
+            decoration: BoxDecoration(border: Border.all(width: 1, color: Color.fromARGB(255, 136, 255, 0))),
             child: TextButton(
                 onPressed: () {
                   snakeController.setGameState();
                   snakeController.startGameLoop();
                   snakeController.resetGame();
                 },
-                child: const Text('START NEW GAME')),
+                child: const Text(
+                    'START NEW GAME',
+                  style: TextStyle(color: Color.fromARGB(255, 136, 255, 0)),
+                ),
+            ),
           ),
           Padding(
             padding: EdgeInsets.all(8),

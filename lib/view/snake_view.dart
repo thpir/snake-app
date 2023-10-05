@@ -23,18 +23,21 @@ class _SnakeViewState extends State<SnakeView> {
         context: context,
         builder: (BuildContext context) {
           return AlertDialog(
+            backgroundColor: Colors.black,
+            shape: RoundedRectangleBorder(
+                side: BorderSide(color: Color.fromARGB(255, 136, 255, 0))),
             content: const SizedBox(
                 width: double.infinity,
                 child: Text(
                   'GAME PAUSED',
                   textAlign: TextAlign.center,
-                  style: TextStyle(fontSize: 26, color: Colors.deepPurple),
+                  style: TextStyle(fontSize: 26, color: Color.fromARGB(255, 136, 255, 0)),
                 )),
             actions: [
               Container(
                 width: double.infinity,
                 decoration: BoxDecoration(
-                    border: Border.all(width: 1, color: Colors.deepPurple)),
+                    border: Border.all(width: 1, color: Color.fromARGB(255, 136, 255, 0))),
                 child: TextButton(
                   onPressed: () {
                     snakeController.setGameState();
@@ -42,7 +45,7 @@ class _SnakeViewState extends State<SnakeView> {
                     Navigator.of(context).pop();
                   },
                   child: const Text(
-                    'EXIT',
+                    'EXIT', style: TextStyle(color: Color.fromARGB(255, 136, 255, 0))
                   ),
                 ),
               ),
@@ -52,14 +55,14 @@ class _SnakeViewState extends State<SnakeView> {
               Container(
                 width: double.infinity,
                 decoration: BoxDecoration(
-                    border: Border.all(width: 1, color: Colors.deepPurple)),
+                    border: Border.all(width: 1, color: Color.fromARGB(255, 136, 255, 0))),
                 child: TextButton(
                   onPressed: () {
                     snakeController.startGameLoop();
                     Navigator.of(context).pop();
                   },
                   child: const Text(
-                    'CONTINUE',
+                    'CONTINUE', style: TextStyle(color: Color.fromARGB(255, 136, 255, 0))
                   ),
                 ),
               ),
@@ -77,7 +80,7 @@ class _SnakeViewState extends State<SnakeView> {
     return Scaffold(
         appBar: snakeController.snakeModel.showGameOverDialog
             ? AppBar(
-                backgroundColor: const Color.fromARGB(50, 0, 0, 0),
+                backgroundColor: Colors.black,
               )
             : AppBar(
                 title: snakeController.snakeModel.gameOn
@@ -85,23 +88,24 @@ class _SnakeViewState extends State<SnakeView> {
                         children: [
                           const Icon(
                             Icons.star,
-                            color: Colors.deepPurple,
+                            color: Color.fromARGB(255, 136, 255, 0),
                           ),
                           Text(
                             ' ${snakeController.highScore} | ',
-                            style: const TextStyle(color: Colors.deepPurple),
+                            style: const TextStyle(color: Color.fromARGB(255, 136, 255, 0)),
                           ),
                           const Icon(
                             Icons.sports_score,
-                            color: Colors.deepPurple,
+                            color: Color.fromARGB(255, 136, 255, 0),
                           ),
                           Text(
                             ' ${snakeController.snakeModel.currentScore.toString()}',
-                            style: const TextStyle(color: Colors.deepPurple),
+                            style: const TextStyle(color: Color.fromARGB(255, 136, 255, 0)),
                           )
                         ],
                       )
                     : const Text(''),
+                backgroundColor: Colors.black,
                 actions: snakeController.snakeModel.gameOn
                     ? [
                         TextButton(
@@ -109,7 +113,10 @@ class _SnakeViewState extends State<SnakeView> {
                               snakeController.stopGameLoop();
                               showGamePauzedDialog();
                             },
-                            child: const Text('PAUSE'))
+                            child: const Text(
+                              'PAUSE',
+                              style: TextStyle(color: Color.fromARGB(255, 136, 255, 0)),
+                            ))
                       ]
                     : [],
               ),
@@ -143,6 +150,12 @@ class _SnakeViewState extends State<SnakeView> {
                       }
                     },
                   )
-            : const PlayButton());
+            : Container(
+                height: double.infinity,
+                width: double.infinity,
+                color: Colors.black,
+                child: const PlayButton(),
+              )
+    );
   }
 }

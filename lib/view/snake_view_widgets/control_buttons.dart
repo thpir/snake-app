@@ -11,8 +11,8 @@ class ControlButtons extends StatelessWidget {
   Widget build(BuildContext context) {
     final snakeController = Provider.of<SnakeController>(context);
     return SizedBox(
-      width: 200,
-      height: 200,
+      width: 328,
+      height: 328,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,
@@ -23,15 +23,22 @@ class ControlButtons extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisSize: MainAxisSize.max,
             children: [
-              FloatingActionButton(
-                backgroundColor: Colors.deepPurple,
-                onPressed: () {
-                  Enum newDirection = SnakeDirection.up;
-                  snakeController.setNewSnakeDirection(newDirection);
-                },
-                child: Icon(
-                  Icons.keyboard_arrow_up,
-                  color: Colors.deepPurple[100],
+              Padding(
+                padding: EdgeInsets.all(8),
+                child: Container(
+                  width: 48,
+                  height: 48,
+                  decoration: BoxDecoration(border: Border.all(width: 1, color: Color.fromARGB(255, 136, 255, 0))),
+                  child: IconButton(
+                    onPressed: () {
+                      Enum newDirection = SnakeDirection.up;
+                      snakeController.setNewSnakeDirection(newDirection);
+                    },
+                    icon: Icon(
+                      Icons.keyboard_arrow_up,
+                      color: Color.fromARGB(255, 136, 255, 0),
+                    ),
+                  ),
                 ),
               )
             ],
@@ -41,26 +48,40 @@ class ControlButtons extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisSize: MainAxisSize.max,
             children: [
-              FloatingActionButton(
-                backgroundColor: Colors.deepPurple,
-                onPressed: () {
-                  Enum newDirection = SnakeDirection.left;
-                  snakeController.setNewSnakeDirection(newDirection);
-                },
-                child: Icon(
-                  Icons.keyboard_arrow_left,
-                  color: Colors.deepPurple[100],
+              Padding(
+                padding: EdgeInsets.all(8),
+                child: Container(
+                  width: 48,
+                  height: 48,
+                  decoration: BoxDecoration(border: Border.all(width: 1, color: Color.fromARGB(255, 136, 255, 0))),
+                  child: IconButton(
+                    onPressed: () {
+                      Enum newDirection = SnakeDirection.left;
+                      snakeController.setNewSnakeDirection(newDirection);
+                    },
+                    icon: Icon(
+                      Icons.keyboard_arrow_left,
+                      color: Color.fromARGB(255, 136, 255, 0),
+                    ),
+                  ),
                 ),
               ),
-              FloatingActionButton(
-                backgroundColor: Colors.deepPurple,
-                onPressed: () {
-                  Enum newDirection = SnakeDirection.right;
-                  snakeController.setNewSnakeDirection(newDirection);
-                },
-                child: Icon(
-                  Icons.keyboard_arrow_right,
-                  color: Colors.deepPurple[100],
+              Padding(
+                padding: EdgeInsets.all(8),
+                child: Container(
+                  width: 48,
+                  height: 48,
+                  decoration: BoxDecoration(border: Border.all(width: 1, color: Color.fromARGB(255, 136, 255, 0))),
+                  child: IconButton(
+                    onPressed: () {
+                      Enum newDirection = SnakeDirection.right;
+                      snakeController.setNewSnakeDirection(newDirection);
+                    },
+                    icon: Icon(
+                      Icons.keyboard_arrow_right,
+                      color: Color.fromARGB(255, 136, 255, 0),
+                    ),
+                  ),
                 ),
               )
             ],
@@ -70,15 +91,22 @@ class ControlButtons extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisSize: MainAxisSize.max,
             children: [
-              FloatingActionButton(
-                backgroundColor: Colors.deepPurple,
-                onPressed: () {
-                  Enum newDirection = SnakeDirection.down;
-                  snakeController.setNewSnakeDirection(newDirection);
-                },
-                child: Icon(
-                  Icons.keyboard_arrow_down,
-                  color: Colors.deepPurple[100],
+              Padding(
+                padding: EdgeInsets.all(8),
+                child: Container(
+                  width: 48,
+                  height: 48,
+                  decoration: BoxDecoration(border: Border.all(width: 1, color: Color.fromARGB(255, 136, 255, 0))),
+                  child: IconButton(
+                    onPressed: () {
+                      Enum newDirection = SnakeDirection.down;
+                      snakeController.setNewSnakeDirection(newDirection);
+                    },
+                    icon: Icon(
+                      Icons.keyboard_arrow_down,
+                      color: Color.fromARGB(255, 136, 255, 0),
+                    ),
+                  ),
                 ),
               )
             ],

@@ -8,18 +8,23 @@ class LandscapeSnakeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Padding(
-      padding: EdgeInsets.all(8.0),
-      child: SizedBox(
-        height: double.infinity,
-        child: Row(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          mainAxisSize: MainAxisSize.max,
-          children: [
-            GameField(),
-            ControlButtons(),
-          ]
+    return Container(
+      width: double.infinity,
+      height: double.infinity,
+      color: Colors.black,
+      child: const Padding(
+        padding: EdgeInsets.all(8.0),
+        child: SizedBox(
+          height: double.infinity,
+          child: Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              mainAxisSize: MainAxisSize.max,
+              children: [
+                GameField(),
+                ControlButtons(),
+              ]
+          ),
         ),
       ),
     );

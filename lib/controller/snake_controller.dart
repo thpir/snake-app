@@ -113,9 +113,9 @@ class SnakeController extends ChangeNotifier {
 
   void checkForGameOver() {
     if (snakeModel.snake[0].x < 0 ||
-        snakeModel.snake[0].x > 49 ||
+        snakeModel.snake[0].x > 19 ||
         snakeModel.snake[0].y < 0 ||
-        snakeModel.snake[0].y > 49) {
+        snakeModel.snake[0].y > 19) {
       snakeModel.setShowGameOverDialog();
       stopGameLoop();
     }
